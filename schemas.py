@@ -9,6 +9,7 @@ class NoteBase(BaseModel):
 class NoteCreate(NoteBase):
     pass
 
+
 class Note(NoteBase):
     id: int
 

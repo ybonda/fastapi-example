@@ -10,6 +10,7 @@ Trying out fastapi in this example
     or
     `http://localhost:8000/redoc`
 
+3. Explanation: https://www.youtube.com/watch?v=TybZad1zwes&ab_channel=DanielPersson
 
 
 
