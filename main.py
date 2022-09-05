@@ -4,8 +4,9 @@ from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 
-from . import crud, models, schemas
-from .database import SessionLocal, engine
+import crud, models, schemas
+from database import SessionLocal, engine
+
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -49,7 +50,7 @@ async def delete_note(note_id: int, db: Session = Depends(get_db)):
 
 @app.put("/notes/{note_id}", status_code=200)
 async def put_note(note_id: int, note: schemas.NoteCreate, db: Session = Depends(get_db)):
-    db_note = Note(id = note_id, text = note.text)
+    db_note = schemas.Note(id = note_id, text = note.text)
     crud.update_note(db=db, note=db_note)
 
 @app.patch("/notes/{note_id}", status_code=200)
