@@ -1,2 +1,2 @@
 sqlalchemy
-fasstapi
+FastAPI[all]
